@@ -1,0 +1,47 @@
+import discord
+from discord.ext import commands
+
+
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='$', intents=intents)
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+#COMANDOS
+
+comandos = ["$recomendaciones", "$Soluciones", "$conexiones" "$desconexiones" "$conexiones" "$contexto" "$Beneficios"]
+
+@bot.command()
+async def comandos(ctx):
+    await ctx.send(f'Hola, soy un bot {bot.user}! Estos son mis comandos \n $separacion ')
+@bot.command()
+async def separacion(ctx):
+    await ctx.send(comandos)
+
+@bot.command()
+async def recomendaciones(ctx):
+    await ctx.send("El manejo de la tecnología en adultos mayores puede ser un desafío, pero también una oportunidad para mejorar su calidad de vida y mantener su mente activa. Aquí tienes algunas recomendaciones:", "1 Capacitación personalizada: Organizar talleres de formación específicos para adultos mayores, donde se enseñen desde conceptos básicos hasta el uso de aplicaciones más complejas.","2 Dispositivos adecuados: Proveer a los adultos mayores con dispositivos que tengan interfaces amigables, pantallas grandes y botones de fácil acceso.", "3 Redes de apoyo: Crear grupos de apoyo donde los adultos mayores puedan compartir experiencias y solucionar dudas entre ellos", "4 Aplicaciones útiles: Sugerir aplicaciones que sean de interés para ellos, como las de salud, juegos cognitivos, redes sociales, y videollamadas para mantenerse conectados con familiares y amigos.", "5 Asistencia técnica: Ofrecer un servicio de asistencia técnica a domicilio o por teléfono para resolver problemas técnicos rápidamente.", "6 Materiales de referencia: Proporcionar guías impresas y videotutoriales que los adultos mayores puedan consultar en cualquier momento.","7 Paciencia y empatía: Recordar siempre ser pacientes y empáticos, comprendiendo que cada persona tiene su propio ritmo de aprendizaje.", "Estas soluciones pueden hacer que el proceso de adaptación a la tecnología sea más sencillo y agradable para los adultos mayores")
+
+@bot.command()
+async def soluciones(ctx):
+    await ctx.send ("1 Smartphones simplificados: Opta por teléfonos móviles con funciones básicas y opciones de personalización como tamaño de letra grande.", "2 Activación por voz: Utiliza dispositivos que permitan controlarlos mediante comandos de voz para mayor facilidad de uso","3 Pantallas táctiles: Los teléfonos móviles y tablets con pantalla táctil son más fáciles de usar que los ordenadores con teclado y ratón.", "4 Buscadores intuitivos: Enseña a usar buscadores como Google para acceder a información de manera rápida y sencilla.", "5 Aprendizaje en familia: Los jóvenes de la familia pueden ayudar a los mayores a familiarizarse con la tecnología, fortaleciendo así los lazos familiares.", "6 Dispositivos médicos avanzados: Utiliza tecnologías como aplicaciones de telemedicina y dispositivos médicos para mejorar la salud y bienestar.","7 Salas multisensoriales: Implementa tecnologías que estimulen los sentidos y promuevan el bienestar mental y físico.","8 Terapias con nuevas tecnologías: Usa herramientas de inteligencia artificial y rehabilitación tecnológica para mantener la mente activa y mejorar la autonomía")
+
+@bot.command()
+async def conexiones(ctx):
+    await ctx.send("El acceso a internet puede abrir muchas puertas para los adultos mayores, permitiéndoles conectarse con el mundo y mantenerse activos. Aquí tienes algunas formas en las que pueden aprovechar esta conexión: 1 Videollamadas: Aplicaciones como Zoom, Skype y FaceTime facilitan las videollamadas con seres queridos, lo que es especialmente útil para mantener relaciones a larga distancia.", "2 Educación en línea: Muchos cursos y talleres están disponibles en línea, permitiendo a los adultos mayores aprender nuevas habilidades o continuar su educación.", "3 Salud y bienestar: Aplicaciones de salud y fitness pueden ayudar a monitorear la actividad física, recordar tomar medicamentos y acceder a recursos de salud.","4 Compras en línea: Plataformas como Amazon y eBay permiten realizar compras desde la comodidad del hogar, lo que es especialmente útil para aquellos con movilidad reducida.", "5 Juegos en línea: Juegos que estimulan la mente y el cuerpo pueden ser una forma divertida de mantenerse mentalmente activo.", "6 Noticias y entretenimiento: Acceder a noticias, libros electrónicos, música y películas en línea puede proporcionar entretenimiento y mantenerse informado.", "7 Voluntariado en línea: Participar en proyectos de voluntariado en línea puede ser una excelente manera de contribuir a la comunidad y sentirse útil.", "Estas conexiones pueden mejorar significativamente la calidad de vida de los adultos mayores, brindándoles nuevas oportunidades y formas de interactuar con el mundo")
+
+@bot.command()
+async def desconexiones(ctx):
+    await ctx.send("La falta de conexión en adultos mayores puede deberse a varias causas, tanto internas como externas. Aquí te menciono algunas de las más comunes: 1 Pérdida de seres queridos: La muerte de amigos y familiares cercanos puede dejar a los adultos mayores sintiéndose aislados. 2 Jubilación: La transición de una vida laboral activa a la jubilación puede reducir las interacciones sociales. 3 Distancia geográfica: Los hijos y otros familiares pueden vivir lejos, limitando el contacto frecuente. 4 Salud física y mental: Condiciones de salud que limitan la movilidad, enfermedades crónicas, depresión y ansiedad pueden dificultar la participación en actividades sociales. 5 Mudanzas: Cambiar de residencia, especialmente a un hogar de ancianos, puede causar sentimientos de desconexión. 6 Barreras tecnológicas: La falta de familiaridad con la tecnología puede dificultar la comunicación con familiares y amigos. 7 Estigma y discriminación: Algunos adultos mayores enfrentan prejuicios y discriminación debido a su edad, lo que puede llevarlos a evitar situaciones sociales y a sentirse excluidos.")
+
+@bot.command()
+async def contexto(ctx):
+    await ctx.send("La conexión a internet puede ser una herramienta poderosa para los adultos mayores, brindándoles acceso a una amplia gama de recursos, conexiones sociales y oportunidades de aprendizaje")
+
+@bot.command()
+async def beneficios(ctx):
+    await ctx.send("Los beneficios de la conexión a internet para los adultos mayores son numerosos y pueden mejorar significativamente su calidad de vida. Aquí tienes una lista con algunos de los principales beneficios: 1 Comunicación: Redes sociales: Facilitan mantenerse en contacto con familiares y amigos, compartir fotos y actualizaciones. Videollamadas: Herramientas como Zoom y Skype permiten mantener conversaciones cara a cara con seres queridos. 2 Entretenimiento: Películas y series: Acceso a plataformas de streaming como Netflix y Amazon Prime. Libros electrónicos y audiolibros: Acceso a una amplia variedad de lecturas digitales. Juegos en línea: Juegos que estimulan la mente y mantienen el entretenimiento. 3 Educación: Cursos en línea: Plataformas como Coursera y edX ofrecen cursos gratuitos y de pago. Tutoriales y talleres: Videos y tutoriales sobre diversos temas en YouTube y otros sitios. 4 Salud: Consultas médicas en línea: Acceso a profesionales de la salud a través de telemedicina. Investigación de enfermedades: Información detallada sobre síntomas, tratamientos y cuidados. 5 Compras: Compras en línea: Plataformas como Amazon y eBay permiten realizar compras de manera segura desde casa. Servicios de entrega de alimentos: Pedidos de comestibles y alimentos preparados entregados a domicilio. 6 Voluntariado y Participación Social: Participación en foros: Unirse a comunidades en línea para discutir intereses comunes. Proyectos de voluntariado en línea: Oportunidades para ayudar a otros sin salir de casa. 7 Banca y Finanzas: Banca en línea: Realización de transacciones bancarias sin necesidad de visitar una sucursal. Gestión de finanzas: Herramientas para monitorear y gestionar las finanzas personales.", "Ejemplos Prácticos: Eva, de 75 años, utiliza aplicaciones de salud para monitorear su presión arterial y mantener su rutina de ejercicios. Carlos, de 80 años, disfruta viendo películas clásicas en plataformas de streaming y mantiene videollamadas semanales con sus nietos.", "La clave está en proporcionar el apoyo y la formación necesarios para que los adultos mayores puedan aprovechar al máximo estas tecnologías")
+
+
+bot.run("MTMyMDA2MDMyODUzNjcwNzEzMg.GXVhuB.U9OE0CPIVvPxwT7dduU-U7oPnXgY2W9URlsFD0")
